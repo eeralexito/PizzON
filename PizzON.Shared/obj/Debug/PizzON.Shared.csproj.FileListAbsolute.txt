@@ -1,0 +1,14 @@
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzON.Shared\obj\Debug\PizzON.Shared.csprojResolveAssemblyReference.cache
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzON.Shared\obj\Debug\PizzON.Shared.Properties.Resources.resources
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzON.Shared\obj\Debug\PizzON.Shared.csproj.GenerateResource.Cache
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzON.Shared\obj\Debug\PizzON.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzON.Shared\bin\Debug\PizzON.Shared.exe.config
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzON.Shared\bin\Debug\PizzON.Shared.exe
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzON.Shared\bin\Debug\PizzON.Shared.pdb
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzON.Shared\bin\Debug\PizzON.Negocio.dll
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzON.Shared\bin\Debug\EntityFramework.dll
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzON.Shared\bin\Debug\PizzON.Negocio.pdb
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzON.Shared\bin\Debug\PizzON.Negocio.dll.config
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzON.Shared\bin\Debug\EntityFramework.xml
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzON.Shared\obj\Debug\PizzON.Shared.exe
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzON.Shared\obj\Debug\PizzON.Shared.pdb

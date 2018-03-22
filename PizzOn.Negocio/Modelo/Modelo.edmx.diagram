@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="de935543a0574d23a3218d818940490b" Name="Diagram1">
+        <EntityTypeShape EntityType="db.PizzonModel.Cliente" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="db.PizzonModel.DetallesPedido" Width="1.5" PointX="8.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="db.PizzonModel.Direccion" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db.PizzonModel.Empleado" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db.PizzonModel.Empresa" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db.PizzonModel.Ingrediente" Width="1.5" PointX="6" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db.PizzonModel.IngredientesProducto" Width="1.5" PointX="8.25" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="db.PizzonModel.Pedido" Width="1.5" PointX="6" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db.PizzonModel.Producto" Width="1.5" PointX="6" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="db.PizzonModel.Telefono" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="db.PizzonModel.Usuarios" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <AssociationConnector Association="db.PizzonModel.FK__Direccion__clien__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="db.PizzonModel.FK__Pedido__cliente__6A30C649" ManuallyRouted="false" />
+        <AssociationConnector Association="db.PizzonModel.FK__Telefono__client__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="db.PizzonModel.FK__DetallesP__pedid__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="db.PizzonModel.FK__DetallesP__produ__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="db.PizzonModel.FK__Pedido__repartid__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="db.PizzonModel.FK__Ingredien__ingre__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="db.PizzonModel.FK__Ingredien__produ__68487DD7" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

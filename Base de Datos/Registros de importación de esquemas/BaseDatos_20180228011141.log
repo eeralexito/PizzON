@@ -1,0 +1,84 @@
+28/02/2018 14:11:41	Este registro contiene información acerca de la operación de importación de esquema en el proyecto 'BaseDatos' del equipo 'PTFORM03' por el usuario 'Rosca'.
+28/02/2018 14:11:41	Se inició la importación del esquema de la base de datos.
+28/02/2018 14:11:48	Recopilando credenciales de la base de datos
+28/02/2018 14:11:48	Recopilando opciones de base de datos
+28/02/2018 14:11:48	Recopilando usuarios
+28/02/2018 14:11:48	Recopilando roles
+28/02/2018 14:11:48	Recopilando roles de aplicación
+28/02/2018 14:11:48	Recopilando pertenencias a roles
+28/02/2018 14:11:48	Recopilando grupos de archivos
+28/02/2018 14:11:48	Recopilando catálogos de texto completo
+28/02/2018 14:11:48	Recopilando ensamblados
+28/02/2018 14:11:48	Recopilando certificados
+28/02/2018 14:11:48	Recopilando claves asimétricas
+28/02/2018 14:11:48	Recopilando claves simétricas
+28/02/2018 14:11:48	Recopilando claves simétricas cifradas
+28/02/2018 14:11:48	Recopilando esquemas
+28/02/2018 14:11:48	Recopilando colecciones de esquemas XML
+28/02/2018 14:11:48	Recopilando tipos de datos definidos por el usuario
+28/02/2018 14:11:48	Recopilando tipos definidos por el usuario
+28/02/2018 14:11:48	Recopilando tipos de tabla
+28/02/2018 14:11:48	Recopilando claves únicas para tipos de tabla
+28/02/2018 14:11:48	Recopilando claves principales para tipos de tabla
+28/02/2018 14:11:48	Recopilando índices para tipos de tablas
+28/02/2018 14:11:48	Recopilando restricciones CHECK para tipos de tabla
+28/02/2018 14:11:48	Recopilando restricciones DEFAULT para tipos de tabla
+28/02/2018 14:11:48	Recopilando funciones de partición
+28/02/2018 14:11:48	Recopilando esquemas de partición
+28/02/2018 14:11:48	Recopilando funciones
+28/02/2018 14:11:48	Recopilando funciones cifradas
+28/02/2018 14:11:48	Recopilando agregados
+28/02/2018 14:11:48	Recopilando procedimientos
+28/02/2018 14:11:48	Recopilando procedimientos cifrados
+28/02/2018 14:11:48	Recopilando tablas
+28/02/2018 14:11:48	Recopilando claves principales
+28/02/2018 14:11:48	Recopilando restricciones UNIQUE
+28/02/2018 14:11:48	Recopilando claves externas
+28/02/2018 14:11:48	Recopilando restricciones DEFAULT
+28/02/2018 14:11:48	Recopilando restricciones CHECK
+28/02/2018 14:11:48	Recopilando vistas
+28/02/2018 14:11:48	Recopilando vistas cifradas
+28/02/2018 14:11:48	Recopilando índices
+28/02/2018 14:11:48	Recopilando estadísticas
+28/02/2018 14:11:48	Recopilando listas de palabras irrelevantes de índices de texto completo
+28/02/2018 14:11:48	Recopilando listas de propiedades de búsqueda
+28/02/2018 14:11:48	Recopilando propiedades de búsqueda
+28/02/2018 14:11:48	Recopilando índices de texto completo
+28/02/2018 14:11:48	Recopilando índices de almacenamiento de columnas
+28/02/2018 14:11:48	Recopilando índices espaciales
+28/02/2018 14:11:48	Recopilando índices XML
+28/02/2018 14:11:48	Recopilando índices XML selectivos
+28/02/2018 14:11:48	Recopilando desencadenadores cifrados
+28/02/2018 14:11:48	Recopilando desencadenadores
+28/02/2018 14:12:01	Recopilando DDL triggers cifrados y de CLR
+28/02/2018 14:12:01	Recopilando DDL triggers
+28/02/2018 14:12:01	Recopilando sinónimos
+28/02/2018 14:12:01	Recopilando valores predeterminados
+28/02/2018 14:12:01	Recopilando enlaces UDDT de restricción de datos
+28/02/2018 14:12:01	Recopilando reglas
+28/02/2018 14:12:01	Recopilando enlaces UDDT de restricción de datos
+28/02/2018 14:12:01	Recopilando tipos de mensaje
+28/02/2018 14:12:01	Recopilando colas
+28/02/2018 14:12:01	Recopilando contratos
+28/02/2018 14:12:01	Recopilando servicios
+28/02/2018 14:12:01	Recopilando notificaciones de eventos
+28/02/2018 14:12:01	Recopilando enlaces de servicio remoto
+28/02/2018 14:12:01	Recopilando prioridades de Broker
+28/02/2018 14:12:01	Recopilando firmas
+28/02/2018 14:12:01	Recopilando opciones de compresión de datos
+28/02/2018 14:12:01	Recopilando tipos de secuencia
+28/02/2018 14:12:01	Recopilando directivas de seguridad
+28/02/2018 14:12:01	Recopilar claves de cifrado de columna
+28/02/2018 14:12:01	Recopilando claves maestras de columna
+28/02/2018 14:12:01	Recopilando orígenes de datos externos
+28/02/2018 14:12:01	Recopilando formatos de archivo externos
+28/02/2018 14:12:01	Recopilando tablas externas
+28/02/2018 14:12:01	Recopilando propiedades extendidas
+28/02/2018 14:12:02	Recopilando credenciales
+28/02/2018 14:12:02	Recopilando inicios de sesión
+28/02/2018 14:12:02	Recopilando auditorías de servidor
+28/02/2018 14:12:03	Buscando elementos duplicados en el proyecto
+28/02/2018 14:12:03	Ha finalizado el procesamiento de los elementos duplicados
+28/02/2018 14:12:03	Finalizó la importación de la base de datos.
+28/02/2018 14:12:03	Se guardó un resumen de la importación en la siguiente ubicación: C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\Base de Datos\Registros de importación de esquemas\BaseDatos_20180228011141.log
+28/02/2018 14:12:03	Haga clic en Finalizar para continuar...

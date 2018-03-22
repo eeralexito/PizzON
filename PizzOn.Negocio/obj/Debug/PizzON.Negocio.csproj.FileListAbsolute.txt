@@ -1,0 +1,13 @@
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzOn.Negocio\obj\Debug\PizzON.Negocio.csprojResolveAssemblyReference.cache
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzOn.Negocio\obj\Debug\PizzON.Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzOn.Negocio\bin\Debug\PizzON.Negocio.dll.config
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzOn.Negocio\bin\Debug\PizzON.Negocio.dll
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzOn.Negocio\bin\Debug\PizzON.Negocio.pdb
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzOn.Negocio\bin\Debug\EntityFramework.dll
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzOn.Negocio\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzOn.Negocio\bin\Debug\Ninject.dll
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzOn.Negocio\bin\Debug\EntityFramework.xml
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzOn.Negocio\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzOn.Negocio\bin\Debug\Ninject.xml
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzOn.Negocio\obj\Debug\PizzON.Negocio.dll
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzOn.Negocio\obj\Debug\PizzON.Negocio.pdb

@@ -1,0 +1,9 @@
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\Base de Datos\bin\Debug\BaseDatos.dacpac
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\Base de Datos\bin\Debug\Base_de_Datos.dll
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\Base de Datos\bin\Debug\Base_de_Datos.pdb
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\Base de Datos\obj\Debug\Model.xml
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\Base de Datos\obj\Debug\refactor.xml
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\Base de Datos\obj\Debug\postdeploy.sql
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\Base de Datos\obj\Debug\predeploy.sql
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\Base de Datos\obj\Debug\Base_de_Datos.dll
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\Base de Datos\obj\Debug\Base_de_Datos.pdb

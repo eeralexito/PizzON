@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db.PizzonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Direccions" Relationship="Self.FK__Direccion__clien__35BCFE0A" FromRole="Cliente" ToRole="Direccion" />
+    <NavigationProperty Name="Telefonoes" Relationship="db.PizzonModel.FK__Telefono__client__49C3F6B7" FromRole="Cliente" ToRole="Telefono" />
+    <NavigationProperty Name="Pedidoes" Relationship="db.PizzonModel.FK__Pedido__cliente__6A30C649" FromRole="Cliente" ToRole="Pedido" />
+  </EntityType>
+  <EntityType Name="DetallesPedido">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipo" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="hora" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="datos_envio" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="precio" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="informacion_adicional" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="repartidor" Type="Int32" />
+    <NavigationProperty Name="Empleado" Relationship="Self.FK__DetallesP__repar__3C69FB99" FromRole="DetallesPedido" ToRole="Empleado" />
+    <Property Name="pedido" Type="Int32" Nullable="false" />
+    <Property Name="producto" Type="Int32" Nullable="false" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Pedido1" Relationship="db.PizzonModel.FK__DetallesP__pedid__6477ECF3" FromRole="DetallesPedido" ToRole="Pedido" />
+    <NavigationProperty Name="Producto1" Relationship="db.PizzonModel.FK__DetallesP__produ__656C112C" FromRole="DetallesPedido" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Direccion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="calle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="numero" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="portal" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="piso" Type="Int32" />
+    <Property Name="puerta" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="localidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cliente" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cliente1" Relationship="Self.FK__Direccion__clien__35BCFE0A" FromRole="Direccion" ToRole="Cliente" />
+  </EntityType>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="numero_seguridad_social" />
+    </Key>
+    <Property Name="numero_seguridad_social" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellidos" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telefono" Type="Int32" />
+    <Property Name="direccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="tipo_empleado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="DetallesPedidoes" Relationship="Self.FK__DetallesP__repar__3C69FB99" FromRole="Empleado" ToRole="DetallesPedido" />
+    <NavigationProperty Name="Pedidoes" Relationship="db.PizzonModel.FK__Pedido__repartid__4CA06362" FromRole="Empleado" ToRole="Pedido" />
+  </EntityType>
+  <EntityType Name="Empresa">
+    <Key>
+      <PropertyRef Name="CIF" />
+    </Key>
+    <Property Name="CIF" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="direccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="horario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telefono_reparto" Type="Int32" />
+    <Property Name="telefono_restaurante" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Ingrediente">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="String" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="precio" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="IngredientesProductoes" Relationship="db.PizzonModel.FK__Ingredien__ingre__693CA210" FromRole="Ingrediente" ToRole="IngredientesProducto" />
+  </EntityType>
+  <EntityType Name="IngredientesProducto">
+    <Key>
+      <PropertyRef Name="producto" />
+      <PropertyRef Name="ingrediente" />
+    </Key>
+    <Property Name="producto" Type="Int32" Nullable="false" />
+    <Property Name="ingrediente" Type="Int32" Nullable="false" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Ingrediente1" Relationship="db.PizzonModel.FK__Ingredien__ingre__693CA210" FromRole="IngredientesProducto" ToRole="Ingrediente" />
+    <NavigationProperty Name="Producto1" Relationship="db.PizzonModel.FK__Ingredien__produ__68487DD7" FromRole="IngredientesProducto" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="String" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="precio" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="categoria" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DetallesPedidoes" Relationship="db.PizzonModel.FK__DetallesP__produ__656C112C" FromRole="Producto" ToRole="DetallesPedido" />
+    <NavigationProperty Name="IngredientesProductoes" Relationship="db.PizzonModel.FK__Ingredien__produ__68487DD7" FromRole="Producto" ToRole="IngredientesProducto" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="usuario1" />
+    </Key>
+    <Property Name="usuario1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contrasena" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="privilegio" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__Direccion__clien__35BCFE0A">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Direccion">
+        <PropertyRef Name="cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetallesP__repar__3C69FB99">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
+    <End Role="DetallesPedido" Type="Self.DetallesPedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="numero_seguridad_social" />
+      </Principal>
+      <Dependent Role="DetallesPedido">
+        <PropertyRef Name="repartidor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PizzonEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Clientes" EntityType="Self.Cliente" />
+    <EntitySet Name="DetallesPedidoes" EntityType="Self.DetallesPedido" />
+    <EntitySet Name="Direccions" EntityType="Self.Direccion" />
+    <EntitySet Name="Empleadoes" EntityType="Self.Empleado" />
+    <EntitySet Name="Empresas" EntityType="Self.Empresa" />
+    <EntitySet Name="Ingredientes" EntityType="Self.Ingrediente" />
+    <EntitySet Name="IngredientesProductoes" EntityType="Self.IngredientesProducto" />
+    <EntitySet Name="Productoes" EntityType="Self.Producto" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+    <AssociationSet Name="FK__Direccion__clien__35BCFE0A" Association="Self.FK__Direccion__clien__35BCFE0A">
+      <End Role="Cliente" EntitySet="Clientes" />
+      <End Role="Direccion" EntitySet="Direccions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetallesP__repar__3C69FB99" Association="Self.FK__DetallesP__repar__3C69FB99">
+      <End Role="Empleado" EntitySet="Empleadoes" />
+      <End Role="DetallesPedido" EntitySet="DetallesPedidoes" />
+    </AssociationSet>
+    <EntitySet Name="Pedidoes" EntityType="db.PizzonModel.Pedido" />
+    <EntitySet Name="Telefonoes" EntityType="db.PizzonModel.Telefono" />
+    <AssociationSet Name="FK__Telefono__client__49C3F6B7" Association="db.PizzonModel.FK__Telefono__client__49C3F6B7">
+      <End Role="Cliente" EntitySet="Clientes" />
+      <End Role="Telefono" EntitySet="Telefonoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetallesP__pedid__6477ECF3" Association="db.PizzonModel.FK__DetallesP__pedid__6477ECF3">
+      <End Role="Pedido" EntitySet="Pedidoes" />
+      <End Role="DetallesPedido" EntitySet="DetallesPedidoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetallesP__produ__656C112C" Association="db.PizzonModel.FK__DetallesP__produ__656C112C">
+      <End Role="Producto" EntitySet="Productoes" />
+      <End Role="DetallesPedido" EntitySet="DetallesPedidoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pedido__repartid__4CA06362" Association="db.PizzonModel.FK__Pedido__repartid__4CA06362">
+      <End Role="Empleado" EntitySet="Empleadoes" />
+      <End Role="Pedido" EntitySet="Pedidoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ingredien__ingre__693CA210" Association="db.PizzonModel.FK__Ingredien__ingre__693CA210">
+      <End Role="Ingrediente" EntitySet="Ingredientes" />
+      <End Role="IngredientesProducto" EntitySet="IngredientesProductoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ingredien__produ__68487DD7" Association="db.PizzonModel.FK__Ingredien__produ__68487DD7">
+      <End Role="Producto" EntitySet="Productoes" />
+      <End Role="IngredientesProducto" EntitySet="IngredientesProductoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pedido__cliente__6A30C649" Association="db.PizzonModel.FK__Pedido__cliente__6A30C649">
+      <End Role="Cliente" EntitySet="Clientes" />
+      <End Role="Pedido" EntitySet="Pedidoes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Pedido">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipo" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="hora" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="datos_envio" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="precio" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="informacion_adicional" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="repartidor" Type="Int32" />
+    <NavigationProperty Name="DetallesPedidoes" Relationship="db.PizzonModel.FK__DetallesP__pedid__6477ECF3" FromRole="Pedido" ToRole="DetallesPedido" />
+    <NavigationProperty Name="Empleado" Relationship="db.PizzonModel.FK__Pedido__repartid__4CA06362" FromRole="Pedido" ToRole="Empleado" />
+    <Property Name="cliente" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cliente1" Relationship="db.PizzonModel.FK__Pedido__cliente__6A30C649" FromRole="Pedido" ToRole="Cliente" />
+  </EntityType>
+  <EntityType Name="Telefono">
+    <Key>
+      <PropertyRef Name="numero_telefono" />
+    </Key>
+    <Property Name="numero_telefono" Type="Int32" Nullable="false" />
+    <Property Name="tipo_numero" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="cliente" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cliente1" Relationship="db.PizzonModel.FK__Telefono__client__49C3F6B7" FromRole="Telefono" ToRole="Cliente" />
+  </EntityType>
+  <Association Name="FK__Telefono__client__49C3F6B7">
+    <End Type="db.PizzonModel.Cliente" Role="Cliente" Multiplicity="1" />
+    <End Type="db.PizzonModel.Telefono" Role="Telefono" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Telefono">
+        <PropertyRef Name="cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetallesP__pedid__6477ECF3">
+    <End Type="db.PizzonModel.Pedido" Role="Pedido" Multiplicity="1" />
+    <End Type="db.PizzonModel.DetallesPedido" Role="DetallesPedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pedido">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DetallesPedido">
+        <PropertyRef Name="pedido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetallesP__produ__656C112C">
+    <End Type="db.PizzonModel.Producto" Role="Producto" Multiplicity="1" />
+    <End Type="db.PizzonModel.DetallesPedido" Role="DetallesPedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="DetallesPedido">
+        <PropertyRef Name="producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pedido__repartid__4CA06362">
+    <End Type="db.PizzonModel.Empleado" Role="Empleado" Multiplicity="0..1" />
+    <End Type="db.PizzonModel.Pedido" Role="Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="numero_seguridad_social" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="repartidor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ingredien__ingre__693CA210">
+    <End Type="db.PizzonModel.Ingrediente" Role="Ingrediente" Multiplicity="1" />
+    <End Type="db.PizzonModel.IngredientesProducto" Role="IngredientesProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ingrediente">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="IngredientesProducto">
+        <PropertyRef Name="ingrediente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ingredien__produ__68487DD7">
+    <End Type="db.PizzonModel.Producto" Role="Producto" Multiplicity="1" />
+    <End Type="db.PizzonModel.IngredientesProducto" Role="IngredientesProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="IngredientesProducto">
+        <PropertyRef Name="producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pedido__cliente__6A30C649">
+    <End Type="db.PizzonModel.Cliente" Role="Cliente" Multiplicity="1" />
+    <End Type="db.PizzonModel.Pedido" Role="Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

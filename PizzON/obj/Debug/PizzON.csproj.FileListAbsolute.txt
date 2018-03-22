@@ -1,0 +1,10 @@
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzON\bin\Debug\PizzON.exe.config
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzON\bin\Debug\PizzON.exe
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzON\bin\Debug\PizzON.pdb
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzON\obj\Debug\PizzON.csprojResolveAssemblyReference.cache
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzON\obj\Debug\PizzON.formLogIn.resources
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzON\obj\Debug\PizzON.Properties.Resources.resources
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzON\obj\Debug\PizzON.csproj.GenerateResource.Cache
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzON\obj\Debug\PizzON.csproj.CoreCompileInputs.cache
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzON\obj\Debug\PizzON.exe
+C:\Users\Rosca\Desktop\PizzON\Aplicacion\PizzON\PizzON\obj\Debug\PizzON.pdb

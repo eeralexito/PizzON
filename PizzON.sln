@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzON.Winforms", "PizzON\PizzON.Winforms.csproj", "{024CFB4D-5F63-47F4-BC05-93FEFC2A857D}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BaseDatos", "Base de Datos\BaseDatos.sqlproj", "{7D7F768C-11C9-42C4-9B4F-50C467852265}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.DataBase", "1.DataBase", "{C748ED39-3C8C-42BB-9FEB-D3529E1BE9C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Application", "2.Application", "{A60EA07E-C3E7-4CE4-95D1-5CD3E3FB3A84}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{04647265-94A5-4B79-9DE3-454D09A2CBA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzON.Negocio", "PizzOn.Negocio\PizzON.Negocio.csproj", "{CFE4E95F-AA00-4A89-A72E-9BA65E5BB142}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzON.Shared", "PizzON.Shared\PizzON.Shared.csproj", "{F525A6B1-A3EF-42FB-A6D8-F12027531D5F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{024CFB4D-5F63-47F4-BC05-93FEFC2A857D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{024CFB4D-5F63-47F4-BC05-93FEFC2A857D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{024CFB4D-5F63-47F4-BC05-93FEFC2A857D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{024CFB4D-5F63-47F4-BC05-93FEFC2A857D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D7F768C-11C9-42C4-9B4F-50C467852265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D7F768C-11C9-42C4-9B4F-50C467852265}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D7F768C-11C9-42C4-9B4F-50C467852265}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7D7F768C-11C9-42C4-9B4F-50C467852265}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D7F768C-11C9-42C4-9B4F-50C467852265}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D7F768C-11C9-42C4-9B4F-50C467852265}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{CFE4E95F-AA00-4A89-A72E-9BA65E5BB142}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFE4E95F-AA00-4A89-A72E-9BA65E5BB142}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFE4E95F-AA00-4A89-A72E-9BA65E5BB142}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFE4E95F-AA00-4A89-A72E-9BA65E5BB142}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F525A6B1-A3EF-42FB-A6D8-F12027531D5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F525A6B1-A3EF-42FB-A6D8-F12027531D5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F525A6B1-A3EF-42FB-A6D8-F12027531D5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F525A6B1-A3EF-42FB-A6D8-F12027531D5F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{024CFB4D-5F63-47F4-BC05-93FEFC2A857D} = {A60EA07E-C3E7-4CE4-95D1-5CD3E3FB3A84}
+		{7D7F768C-11C9-42C4-9B4F-50C467852265} = {C748ED39-3C8C-42BB-9FEB-D3529E1BE9C3}
+		{CFE4E95F-AA00-4A89-A72E-9BA65E5BB142} = {A60EA07E-C3E7-4CE4-95D1-5CD3E3FB3A84}
+		{F525A6B1-A3EF-42FB-A6D8-F12027531D5F} = {A60EA07E-C3E7-4CE4-95D1-5CD3E3FB3A84}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D9E9296-DE18-4193-8999-EE7B28A8F6F8}
+	EndGlobalSection
+EndGlobal

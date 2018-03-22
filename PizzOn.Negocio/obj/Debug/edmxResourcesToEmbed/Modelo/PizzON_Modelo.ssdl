@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db.PizzonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="25" />
+    <Property Name="apellidos" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DetallesPedido">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pedido" Type="int" Nullable="false" />
+    <Property Name="producto" Type="int" Nullable="false" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Direccion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="calle" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="numero" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="portal" Type="varchar" MaxLength="10" />
+    <Property Name="piso" Type="int" />
+    <Property Name="puerta" Type="varchar" MaxLength="5" />
+    <Property Name="localidad" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cliente" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="numero_seguridad_social" />
+    </Key>
+    <Property Name="numero_seguridad_social" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="apellidos" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="telefono" Type="int" />
+    <Property Name="direccion" Type="text" />
+    <Property Name="tipo_empleado" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Empresa">
+    <Key>
+      <PropertyRef Name="CIF" />
+    </Key>
+    <Property Name="CIF" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="direccion" Type="text" />
+    <Property Name="horario" Type="varchar" MaxLength="50" />
+    <Property Name="telefono_reparto" Type="int" />
+    <Property Name="telefono_restaurante" Type="int" />
+  </EntityType>
+  <EntityType Name="Ingrediente">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="precio" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IngredientesProducto">
+    <Key>
+      <PropertyRef Name="producto" />
+      <PropertyRef Name="ingrediente" />
+    </Key>
+    <Property Name="producto" Type="int" Nullable="false" />
+    <Property Name="ingrediente" Type="int" Nullable="false" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pedido">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipo" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="fecha" Type="date" Nullable="false" />
+    <Property Name="hora" Type="time" Precision="7" Nullable="false" />
+    <Property Name="datos_envio" Type="text" />
+    <Property Name="precio" Type="money" Nullable="false" />
+    <Property Name="informacion_adicional" Type="text" />
+    <Property Name="repartidor" Type="int" />
+    <Property Name="cliente" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="precio" Type="money" Nullable="false" />
+    <Property Name="categoria" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Telefono">
+    <Key>
+      <PropertyRef Name="numero_telefono" />
+    </Key>
+    <Property Name="numero_telefono" Type="int" Nullable="false" />
+    <Property Name="tipo_numero" Type="varchar" MaxLength="20" />
+    <Property Name="cliente" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="usuario" />
+    </Key>
+    <Property Name="usuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="contrasena" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="privilegio" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <Association Name="FK__DetallesP__pedid__6477ECF3">
+    <End Role="Pedido" Type="Self.Pedido" Multiplicity="1" />
+    <End Role="DetallesPedido" Type="Self.DetallesPedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pedido">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DetallesPedido">
+        <PropertyRef Name="pedido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetallesP__produ__656C112C">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+    <End Role="DetallesPedido" Type="Self.DetallesPedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="DetallesPedido">
+        <PropertyRef Name="producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Direccion__clien__35BCFE0A">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Direccion">
+        <PropertyRef Name="cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ingredien__ingre__693CA210">
+    <End Role="Ingrediente" Type="Self.Ingrediente" Multiplicity="1" />
+    <End Role="IngredientesProducto" Type="Self.IngredientesProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ingrediente">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="IngredientesProducto">
+        <PropertyRef Name="ingrediente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ingredien__produ__68487DD7">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+    <End Role="IngredientesProducto" Type="Self.IngredientesProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="IngredientesProducto">
+        <PropertyRef Name="producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pedido__cliente__6A30C649">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pedido__repartid__4CA06362">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
+    <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="numero_seguridad_social" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="repartidor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Telefono__client__49C3F6B7">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Telefono" Type="Self.Telefono" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Telefono">
+        <PropertyRef Name="cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbPizzonModelStoreContainer">
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DetallesPedido" EntityType="Self.DetallesPedido" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Direccion" EntityType="Self.Direccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empresa" EntityType="Self.Empresa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ingrediente" EntityType="Self.Ingrediente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IngredientesProducto" EntityType="Self.IngredientesProducto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pedido" EntityType="Self.Pedido" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Telefono" EntityType="Self.Telefono" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__DetallesP__pedid__6477ECF3" Association="Self.FK__DetallesP__pedid__6477ECF3">
+      <End Role="Pedido" EntitySet="Pedido" />
+      <End Role="DetallesPedido" EntitySet="DetallesPedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetallesP__produ__656C112C" Association="Self.FK__DetallesP__produ__656C112C">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="DetallesPedido" EntitySet="DetallesPedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Direccion__clien__35BCFE0A" Association="Self.FK__Direccion__clien__35BCFE0A">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Direccion" EntitySet="Direccion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ingredien__ingre__693CA210" Association="Self.FK__Ingredien__ingre__693CA210">
+      <End Role="Ingrediente" EntitySet="Ingrediente" />
+      <End Role="IngredientesProducto" EntitySet="IngredientesProducto" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ingredien__produ__68487DD7" Association="Self.FK__Ingredien__produ__68487DD7">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="IngredientesProducto" EntitySet="IngredientesProducto" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pedido__cliente__6A30C649" Association="Self.FK__Pedido__cliente__6A30C649">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pedido__repartid__4CA06362" Association="Self.FK__Pedido__repartid__4CA06362">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Telefono__client__49C3F6B7" Association="Self.FK__Telefono__client__49C3F6B7">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Telefono" EntitySet="Telefono" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
